@@ -5,10 +5,37 @@
     font-size: 18px;
 }
 
+/* colors
+blue #007ea4
+orange #d96227
+*/
+
+
 header {
     width: 100%;
     max-width: 1200px;
     margin: auto;
+    display: flex;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo:link {
+    text-decoration: none;
+    color: #007ea4;
+}
+
+.logo i {
+    font-size: 3rem;
+    flex: 0 1 auto;
+  
+}
+
+.logo h1 {
+    flex: 0 1 auto;
 }
 
 header ul {
