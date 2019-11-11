@@ -154,4 +154,11 @@ nav p {
     letter-spacing: -0.05rem;
 }
 
+.fade-in-on-page-load {
+    animation: fadein 1s;
+}
 
+@keyframes fadein {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
