@@ -11,12 +11,22 @@ header {
     margin: auto;
 }
 
+header ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+header li {
+    flex: 1 1 auto;
+    text-decoration: none;
+    list-style: none;
+}
+
 main {
     width: 100%;
     max-width: 1200px;
     margin: auto;
 }
-
 
 footer {
     width: 100%;
