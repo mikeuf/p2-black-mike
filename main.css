@@ -28,6 +28,7 @@ header {
     width: 100%;
     max-width: 1200px;
     margin: auto;
+    display: flex;
 }
 
 .main-container {
@@ -40,7 +41,6 @@ header {
 }
 
 main {
-
     height: 100%;
     width: 100%;
     max-width: 1200px;
@@ -59,7 +59,7 @@ footer {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 1rem 0 0 0;
+    flex: 1 1 auto;
 }
 
 .logo:link {
@@ -68,7 +68,7 @@ footer {
 }
 
 .logo i {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     flex: 0 1 auto;
     margin: 0 1rem 0 0;
   
@@ -78,7 +78,7 @@ footer {
     flex: 0 1 auto;
     font-family: futura-pt, sans-serif;
     font-weight: 300;
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-style: normal;
     letter-spacing: 0.2rem;
     text-transform: uppercase;
@@ -86,19 +86,23 @@ footer {
 
 header ul {
     display: flex;
-    justify-content: flex-start;
-    padding: 0.25rem 0 0 0;
+    justify-content: space-evenly;
+    padding: 1.25rem 0 0 0;
 }
 
 header li {
     color: #007ea4;
-    flex: 0 1 4%;
-    font-size: 1.5rem;
+    flex: 1 1 auto;
+    font-size: 1.25rem;
     text-decoration: none;
     list-style: none;
     text-align: center;
 }
 
+nav {
+    flex: 1 1 auto;
+    height: 4rem;
+}
 
 
 
