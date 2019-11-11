@@ -1,0 +1,28 @@
+/* reset rule */
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+}
+
+header {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+footer {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+
