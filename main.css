@@ -5,22 +5,31 @@
     font-size: 18px;
 }
 
+@import url("https://p.typekit.net/p.css?s=1&k=svz6tik&ht=tk&f=10881.10882.10884.10885.15357.15358.15361.15362.32874.32875&a=7346346&app=typekit&e=css");
+
 /* colors
 blue #007ea4
 orange #d96227
 */
 
+body {
+    font-family: futura-pt, sans-serif;
+    font-weight: 400;
+    font-size: 2rem;
+    font-style: normal;
+}
 
 header {
     width: 100%;
     max-width: 1200px;
     margin: auto;
-    display: flex;
 }
 
 .logo {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem 0 0 0;
 }
 
 .logo:link {
@@ -29,24 +38,35 @@ header {
 }
 
 .logo i {
-    font-size: 3rem;
+    font-size: 3.5rem;
     flex: 0 1 auto;
+    margin: 0 1rem 0 0;
   
 }
 
 .logo h1 {
     flex: 0 1 auto;
+    font-family: futura-pt, sans-serif;
+    font-weight: 300;
+    font-size: 2rem;
+    font-style: normal;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
 }
 
 header ul {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    padding: 0.25rem 0 0 0;
 }
 
 header li {
-    flex: 1 1 auto;
+    color: #007ea4;
+    flex: 0 1 4%;
+    font-size: 1.5rem;
     text-decoration: none;
     list-style: none;
+    text-align: center;
 }
 
 main {
