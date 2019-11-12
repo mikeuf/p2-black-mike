@@ -10,10 +10,24 @@ footerTag[0].innerHTML = '<p> &copy; 2019 Debary Public Library Association, Inc
 
 
 
-const coordinates = '28.899260, -81.306357';
-const authKey = '3cf8a2ee703494aed518da56dcaab94a';
-const darkSkyURL = 'https://api.darksky.net/forecast/';
+const COORDINATES = '28.899260,-81.306357';
+const AUTH_KEY = '3cf8a2ee703494aed518da56dcaab94a/';
+const DARK_SKY_URL = 'https://api.darksky.net/forecast/';
+const PROXY_URL ='https://cors-anywhere.herokuapp.com/';
 
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var apiResult = JSON.parse(this.responseText);
+
+        console.log(apiResult);
+
+
+    }
+};
+xmlhttp.open('GET', PROXY_URL + DARK_SKY_URL + AUTH_KEY + COORDINATES, true);
+xmlhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
+xmlhttp.send();
 
 
 
