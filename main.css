@@ -40,13 +40,30 @@ header {
 }
 
 .main-container {
-    background-image: url("images/background-main.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+
     height: 90%;
     width: 100%;
     
 }
+
+#background-main {
+    background-image: url("images/background-main.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#background-contact {
+    background-image: url("images/background-contact.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#background-about {
+    background-image: url("images/background-main.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;  
+}
+
 
 main {
     height: 100%;
