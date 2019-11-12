@@ -10,6 +10,13 @@ footerTag[0].innerHTML = '<p> &copy; 2019 Debary Public Library Association, Inc
 
 
 
+const coordinates = '28.899260, -81.306357';
+const authKey = '3cf8a2ee703494aed518da56dcaab94a';
+const darkSkyURL = 'https://api.darksky.net/forecast/';
+
+
+
+
 let tabButton = document.querySelectorAll('.tab-button');
 
 console.log(tabButton);
