@@ -52,10 +52,11 @@ header {
     background-size: cover;
 }
 
-#background-contact {
+#main-container-contact {
     background-image: url("images/background-contact.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    color: #ffffff;
 }
 
 #background-about {
@@ -181,14 +182,20 @@ nav p {
 }
 
 #tab-address {
-display: none;
+    display: none;
+
 }
 
 #tab-hours {
-
+    display: none;
 }
 
 #tab-map {
     display: none;
+}
+
+.active {
+    display: flex !important;
+    animation: fadein 0.5s;
 }
 

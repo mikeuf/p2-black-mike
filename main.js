@@ -10,7 +10,69 @@ footerTag[0].innerHTML = '<p> &copy; 2019 Debary Public Library Association, Inc
 
 
 
+let tabButton = document.querySelectorAll('.tab-button');
 
+console.log(tabButton);
+for (var i = 0, len = tabButton.length; i < len; ++i) {
+    
+    console.log(tabButton[i]);
+    tabButton[i].addEventListener('click', {
+        handleEvent: function (event) {
+            console.log('yo');
+            console.log(event.target);
+           // console.log(document.getElementsByClassName('active').item(0));
+            let activeSection = document.getElementsByClassName('active').item(0);
+            if (activeSection) {
+                console.log(activeSection);
+                activeSection.classList.toggle('active');
+            }
+            console.log(event.target.id);
+
+            switch (event.target.id) {
+                
+                case 'tab-button-address':
+                    console.log('address');
+                    console.log(document.getElementById('tab-address'));
+                    document.getElementById('tab-address').classList.toggle('active');
+
+                    break;
+                case 'tab-button-hours':
+                    
+                    document.getElementById('tab-hours').classList.toggle('active');
+                    break;
+                    case 'tab-button-map':
+                     
+                        document.getElementById('tab-map').classList.toggle('active');
+                        break;
+                  default:
+                    alert('nada');
+            }
+            }
+           
+
+    });
+
+   
+}
+
+});
+
+
+
+
+    /*
+    addEventListener('click', (event) => {
+        console.log(document.getElementsByClassName('.active'));
+        document.querySelector('.active').classList.toggle('active');
+        console.log(this);
+        this.classList.toggle('active');
+    })
+    */
+
+
+
+
+/*
 
 var accordionHeaders = document.querySelectorAll('#accordion .accordion-header');
 var accordionDescriptions = document.querySelectorAll('#accordion .accordion-description');
@@ -20,13 +82,13 @@ function expandAccordionDescription() {
 
   // I commented this out so I could each panel could open and close individually
 
-  /*
+  /
   for (var i = 0, len = accordionHeaders.length; i < len; ++i) {
     // close any open panels
     accordionHeaders[i].childNodes[3].innerHTML = '+';
     accordionDescriptions[i].classList.remove('accordion-open');
   }
-  */
+  /
 
 
   // if the current panel was open, and was clicked again, just let it close without opening anything else
@@ -45,7 +107,4 @@ function expandAccordionDescription() {
 for (var i = 0, len = accordionHeaders.length; i < len; ++i) {
   accordionHeaders[i].addEventListener('click', expandAccordionDescription);
 }
-
-
-
-});
+*/
