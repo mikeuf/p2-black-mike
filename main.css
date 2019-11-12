@@ -141,7 +141,7 @@ nav p {
 
 .cta h2, .cta p {
     color: #ffffff;
-    text-shadow: 0 0 8rem #000000;
+    text-shadow: 0 0 10rem #000000;
 }
 
 .cta h2 {
@@ -162,3 +162,16 @@ nav p {
     from {opacity: 0;}
     to {opacity: 1;}
 }
+
+#tab-address {
+display: none;
+}
+
+#tab-hours {
+
+}
+
+#tab-map {
+    display: none;
+}
+

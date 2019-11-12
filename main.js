@@ -1,9 +1,51 @@
 
- window.onload = function() {
+
+window.addEventListener('load', (event) => {
+
 headerTag = document.getElementsByTagName('header');
 headerTag[0].innerHTML = '<a class="logo" href="index.html"> <i class="fal fa-landmark"></i> <h1>Debary Public <br />Library Association</h1> </a> <nav> <ul> <li><a href="about.html"><i class="fal fa-book-user"></i><p>About</p></a></li><li><a href="contact.html"><i class="fal fa-phone-rotary"></i><p>Contact</p></a></li></ul> </nav>';
 
 footerTag = document.getElementsByTagName('footer');
 footerTag[0].innerHTML = '<p> &copy; 2019 Debary Public Library Association, Inc. All rights reserved. </p>';
 
- };
+
+
+
+
+var accordionHeaders = document.querySelectorAll('#accordion .accordion-header');
+var accordionDescriptions = document.querySelectorAll('#accordion .accordion-description');
+
+function expandAccordionDescription() {
+
+
+  // I commented this out so I could each panel could open and close individually
+
+  /*
+  for (var i = 0, len = accordionHeaders.length; i < len; ++i) {
+    // close any open panels
+    accordionHeaders[i].childNodes[3].innerHTML = '+';
+    accordionDescriptions[i].classList.remove('accordion-open');
+  }
+  */
+
+
+  // if the current panel was open, and was clicked again, just let it close without opening anything else
+  if (!this.nextElementSibling.classList.contains('accordion-open')) {
+
+  // if the current panel is closed, open it and set a '-'
+  this.nextElementSibling.classList.add('accordion-open');
+  this.childNodes[3].innerHTML = '-';
+  } else {
+  this.nextElementSibling.classList.remove('accordion-open');
+  this.childNodes[3].innerHTML = '+';
+  }
+}
+
+// apply the event listener to all of the headers
+for (var i = 0, len = accordionHeaders.length; i < len; ++i) {
+  accordionHeaders[i].addEventListener('click', expandAccordionDescription);
+}
+
+
+
+});
