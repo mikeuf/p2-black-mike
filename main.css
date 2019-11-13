@@ -55,7 +55,7 @@ header {
     
 }
 
-#background-main {
+#main-container-index {
     background-image: url("images/background-main.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -244,6 +244,10 @@ nav p {
     animation: fadein 0.25s;
 }
 
+.hidden {
+    display: none;
+}
+
 .tab-button {
     background-color: #007ea4;
     color: #ffffff;
@@ -256,6 +260,16 @@ nav p {
     font-weight: 400;
     
 }
+
+.tab-button:hover {
+    background-color: #009999;
+}
+
+
+.tab-button:active, .tab-button:focus {
+    background-color: #00bbbb;
+}
+
 
 .google-map {
     width: 100%;

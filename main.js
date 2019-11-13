@@ -9,6 +9,18 @@ footerTag = document.getElementsByTagName('footer');
 footerTag[0].innerHTML = '<p> &copy; 2019 Debary Public Library Association, Inc. All rights reserved. </p>';
 
 
+if (tabButtonAddress = document.getElementById('tab-button-weather')) {
+tabButtonAddress.addEventListener('click', getWeather);
+}
+
+function getWeather() {
+
+    // clear any previous weather information to avoid duplication
+    if (listWeather = document.getElementById('list-weather')) {
+        listWeather.parentNode.removeChild(listWeather);
+    }
+
+
 
 const COORDINATES = '28.899260,-81.306357';
 const AUTH_KEY = '3cf8a2ee703494aed518da56dcaab94a/';
@@ -22,10 +34,8 @@ xmlhttp.onreadystatechange = function() {
 
         console.log(apiResult);
 
-        headerWeather = document.createElement('h3');
-        headerWeather.appendChild(document.createTextNode('Current Weather at the Library'));
-
-        listWeather = document.createElement('ul');        
+        listWeather = document.createElement('ul');   
+        listWeather.setAttribute('id','list-weather');     
 
         itemTemperature = document.createElement('li');
         itemTemperature.appendChild(document.createTextNode('Temperature: ' + apiResult.currently.temperature.toPrecision(2) + '\u2109'));
@@ -40,24 +50,30 @@ xmlhttp.onreadystatechange = function() {
         itemSummary.appendChild(document.createTextNode('Conditions: ' + apiResult.currently.summary));
 
         fragment = document.createDocumentFragment();
-        fragment.appendChild(headerWeather);
+
         fragment.appendChild(listWeather);
         listWeather.appendChild(itemTemperature);
         listWeather.appendChild(itemHumidity);
         listWeather.appendChild(itemWind);
         listWeather.appendChild(itemSummary);
 
-        document.querySelector('#tab-address').appendChild(fragment);
+        let loadingMessage = document.querySelector('#tab-weather h3');
+        loadingMessage.classList.add('hidden');
 
-
-
-
+        document.querySelector('#tab-weather').appendChild(fragment);
 
     }
 };
 xmlhttp.open('GET', PROXY_URL + DARK_SKY_URL + AUTH_KEY + COORDINATES, true);
 xmlhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
 xmlhttp.send();
+
+}
+
+
+
+
+
 
 
 
@@ -82,8 +98,6 @@ for (var i = 0, len = tabButton.length; i < len; ++i) {
             switch (event.target.id) {
                 
                 case 'tab-button-address':
-                    console.log('address');
-                    console.log(document.getElementById('tab-address'));
                     document.getElementById('tab-address').classList.toggle('active');
 
                     break;
@@ -95,8 +109,12 @@ for (var i = 0, len = tabButton.length; i < len; ++i) {
                      
                         document.getElementById('tab-map').classList.toggle('active');
                         break;
+                        case 'tab-button-weather':
+                     
+                            document.getElementById('tab-weather').classList.toggle('active');
+                            break;
                   default:
-                    alert('nada');
+                    alert('Unable to determine the intended tab. Please refresh your browser and try again.');
             }
             }
            
