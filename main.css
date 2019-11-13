@@ -68,8 +68,8 @@ header {
     color: #ffffff;
 }
 
-#background-about {
-    background-image: url("images/background-main.jpg");
+#main-container-about {
+    background-image: url("images/background-about.jpg");
     background-repeat: no-repeat;
     background-size: cover;  
 }
