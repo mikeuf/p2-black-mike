@@ -22,6 +22,36 @@ xmlhttp.onreadystatechange = function() {
 
         console.log(apiResult);
 
+        headerWeather = document.createElement('h3');
+        headerWeather.appendChild(document.createTextNode('Current Weather at the Library'));
+
+        listWeather = document.createElement('ul');        
+
+        itemTemperature = document.createElement('li');
+        itemTemperature.appendChild(document.createTextNode('Temperature: ' + apiResult.currently.temperature.toPrecision(2) + '\u2109'));
+
+        itemHumidity = document.createElement('li');
+        itemHumidity.appendChild(document.createTextNode('Humidity ' + apiResult.currently.humidity * 100 + '%'));
+
+        itemWind = document.createElement('li');
+        itemWind.appendChild(document.createTextNode('Wind Speed: ' + apiResult.currently.windSpeed.toPrecision(2) + ' mph'));
+
+        itemSummary = document.createElement('li');
+        itemSummary.appendChild(document.createTextNode('Conditions: ' + apiResult.currently.summary));
+
+        fragment = document.createDocumentFragment();
+        fragment.appendChild(headerWeather);
+        fragment.appendChild(listWeather);
+        listWeather.appendChild(itemTemperature);
+        listWeather.appendChild(itemHumidity);
+        listWeather.appendChild(itemWind);
+        listWeather.appendChild(itemSummary);
+
+        document.querySelector('#tab-address').appendChild(fragment);
+
+
+
+
 
     }
 };
