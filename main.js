@@ -118,7 +118,6 @@ window.addEventListener('load', (event) => {
 
     }
 
-});
 
 
 
@@ -135,39 +134,46 @@ addEventListener('click', (event) => {
 
 
 
-/*
+let buttonsAccordion = document.querySelectorAll('#accordion-about button');
+let articlesAccordion = document.querySelectorAll('#accordion-about article');
 
-var accordionHeaders = document.querySelectorAll('#accordion .accordion-header');
-var accordionDescriptions = document.querySelectorAll('#accordion .accordion-description');
+console.log(buttonsAccordion);
 
-function expandAccordionDescription() {
-
-
-  // I commented this out so I could each panel could open and close individually
-
-  /
-  for (var i = 0, len = accordionHeaders.length; i < len; ++i) {
-    // close any open panels
-    accordionHeaders[i].childNodes[3].innerHTML = '+';
-    accordionDescriptions[i].classList.remove('accordion-open');
-  }
-  /
-
-
-  // if the current panel was open, and was clicked again, just let it close without opening anything else
-  if (!this.nextElementSibling.classList.contains('accordion-open')) {
-
-  // if the current panel is closed, open it and set a '-'
-  this.nextElementSibling.classList.add('accordion-open');
-  this.childNodes[3].innerHTML = '-';
-  } else {
-  this.nextElementSibling.classList.remove('accordion-open');
-  this.childNodes[3].innerHTML = '+';
-  }
-}
+console.log(articlesAccordion);
 
 // apply the event listener to all of the headers
-for (var i = 0, len = accordionHeaders.length; i < len; ++i) {
-  accordionHeaders[i].addEventListener('click', expandAccordionDescription);
+for (var i = 0, len = buttonsAccordion.length; i < len; ++i) {
+    buttonsAccordion[i].addEventListener('click', expandPanel);
+    console.log(buttonsAccordion[i]);
 }
-*/
+
+function expandPanel() {
+console.log('made it');
+
+  // if the current panel was open, and was clicked again, just let it close without opening anything else
+  if (! this.nextElementSibling.classList.contains('expanded')) {
+
+  // if the current panel is closed, open it
+  console.log(this.nextElementSibling);
+  this.nextElementSibling.classList.add('expanded');
+
+  // make text visible
+  let articleText = this.nextElementSibling.children;
+  for (var i = 0, len = articleText.length; i < len; ++i) {
+    articleText[i].classList.add('visible');
+  } 
+
+  } else {
+      
+  this.nextElementSibling.classList.remove('expanded');
+  let articleText = this.nextElementSibling.children;
+  for (var i = 0, len = articleText.length; i < len; ++i) {
+    articleText[i].classList.remove('visible');
+  }  
+}
+}
+
+
+
+});
+
