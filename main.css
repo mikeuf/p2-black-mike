@@ -48,6 +48,10 @@ header {
     
 }
 
+.hamburger-menu {
+display: none;
+}
+
 .main-container {
 
     height: 90%;
@@ -330,7 +334,7 @@ nav p {
 .expanded {
     opacity: 1 !important;
       height: 8rem !important;
-    padding: 2rem 5rem !important;
+    padding: 1rem !important;
     transition: height 0.25s ease;
 }
 
@@ -354,6 +358,8 @@ display: none;
         background-color: #ffffff;      
         margin: 1rem 0 0 0;   
         padding: 0;
+        z-index: 1;
+        position: relative;
        }
 
        header li {
@@ -373,12 +379,97 @@ display: none;
         text-align: center;
        }
 
+       .hamburger-menu {
+       margin: 0;
+       padding: 0;
+ 
+ display: inline;
+ position: absolute;
+ top: 1rem;
+ right: 1rem;
+
+       }
+       .hamburger-menu  i {
+       font-size: 3rem;
+       }
+
+
         nav p {
             line-height: 1.2;
             font-size: 1.25rem;
             flex: 0 1 auto;
         }
 
+        .cta {
+            top: 20vh;
+        }
+
+        .cta h2 {
+            font-size: 4rem;
+            letter-spacing: -1px;
+            line-height: 3.5rem;
+            margin: 1rem;
+        }
+        }
+
+        .cta p {
+            font-size: 1.5rem;
+            letter-spacing: normal;
+            line-height: 2rem;
+            margin: 1rem;
+        }
+
+        #main-container-about h1 {
+    font-size: 2.5rem;
+        }
+
+        .expanded {
+            
+              height: fit-content !important;
+              max-height: 20rem !important;
+       
+        }
+
+        #tabs ul {
+         
+            flex-direction: column;
+        }
+
+        .tab-button {
+        width: 100%;
+    text-align: left;
+        }
+
+
+        .tab-section h2 {
+            font-size: 2.25rem;
+            margin: 5vh 1rem 0 1rem;
+        }
+
+        .tab-section h3 {
+            font-size: 1.5rem;
+            margin: 1rem 1rem 0 1rem;
+        }
+        .tab-section p {
+            font-size: 1.25rem;
+            margin: 0 1rem 0 1rem;
+        }
+
+        .google-map {
+            width: 90%;
+            height: 40%;
+            
+            padding: 1rem;
+            margin: auto;
+          
+            display: block;
+        }
+
+        .tab-section li {
+            font-size: 1.25rem;
+            list-style: none;
+            margin: 0.5rem 1rem 0 1rem;
+        }
 
 
 }
