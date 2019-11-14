@@ -21,7 +21,6 @@ window.addEventListener('load', (event) => {
         }
 
 
-
         const COORDINATES = '28.899260,-81.306357';
         const AUTH_KEY = '3cf8a2ee703494aed518da56dcaab94a/';
         const DARK_SKY_URL = 'https://api.darksky.net/forecast/';
@@ -71,13 +70,6 @@ window.addEventListener('load', (event) => {
     }
 
 
-
-
-
-
-
-
-
     let tabButton = document.querySelectorAll('.tab-button');
 
     for (var i = 0, len = tabButton.length; i < len; ++i) {
@@ -107,7 +99,7 @@ window.addEventListener('load', (event) => {
                         document.getElementById('tab-weather').classList.toggle('active');
                         break;
 
-                        default:
+                    default:
                         alert('Unable to determine the intended tab. Please refresh your browser and try again.');
                 }
             }
@@ -122,51 +114,51 @@ window.addEventListener('load', (event) => {
 
 
 
+    let buttonsAccordion = document.querySelectorAll('.accordion-header');
+    //let articlesAccordion = document.querySelectorAll('#accordion-about article');
+
+    console.log(buttonsAccordion);
+
+    //console.log(articlesAccordion);
+
+    // apply the event listener to all of the headers
+    for (var i = 0, len = buttonsAccordion.length; i < len; ++i) {
+        console.log(buttonsAccordion[i]);
+        buttonsAccordion[i].addEventListener('click', expandAccordion);
+    }
+
+    function expandAccordion() {
+
+        console.log('made it');
+
+        // if the current panel was open, and was clicked again, just let it close without opening anything else
+
+        // if the current panel was open, and was clicked again, just let it close without opening anything else
+        if (!this.nextElementSibling.classList.contains('expanded')) {
+
+            // if the current panel is closed, open it and set a '-'
+            this.nextElementSibling.classList.add('expanded');
+        } else {
+            this.nextElementSibling.classList.remove('expanded');
+        }
+    }
 
 
+    function showMobileMenu() {
 
-
-let buttonsAccordion = document.querySelectorAll('.accordion-header');
-//let articlesAccordion = document.querySelectorAll('#accordion-about article');
-
-console.log(buttonsAccordion);
-
-//console.log(articlesAccordion);
-
-// apply the event listener to all of the headers
-for (var i = 0, len = buttonsAccordion.length; i < len; ++i) {
-    console.log(buttonsAccordion[i]);
-    buttonsAccordion[i].addEventListener('click', expandAccordion);
-}
-
-function expandAccordion () {
-
-console.log('made it');
-
-  // if the current panel was open, and was clicked again, just let it close without opening anything else
-  
-  // if the current panel was open, and was clicked again, just let it close without opening anything else
-  if (!this.nextElementSibling.classList.contains('expanded')) {
-
-    // if the current panel is closed, open it and set a '-'
-    this.nextElementSibling.classList.add('expanded');
-       } else {
-    this.nextElementSibling.classList.remove('expanded');
-      }
-  
-
+        let menuMobile = document.querySelector('header nav');
+        menuMobile.classList.toggle('visible-mobile');
 
     }
 
     // apply the event listener to all of the headers
-for (var i = 0, len = buttonsAccordion.length; i < len; ++i) {
-    console.log('adding event listener');
-    buttonsAccordion[i].addEventListener('click', expandAccordion);
-  }
+    for (var i = 0, len = buttonsAccordion.length; i < len; ++i) {
+        console.log('adding event listener');
+        buttonsAccordion[i].addEventListener('click', expandAccordion);
+    }
 
-
-
-
+    let hamburgerMenu = document.querySelector('.hamburger-menu');
+    hamburgerMenu.addEventListener('click', showMobileMenu);
 
 
 
