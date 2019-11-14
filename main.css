@@ -334,4 +334,53 @@ nav p {
     transition: height 0.25s ease;
 }
 
+@media (max-width: 576px) { 
+
+    header {
+        flex-direction: column;
+    }
+
+    .logo {
+       padding: 0.5rem 1rem 0 1rem;
+    }
+    
+    .logo h1 {
+display: none;
+    }
+
+    header ul {
+       
+        flex-direction: column;
+        background-color: #ffffff;      
+        margin: 1rem 0 0 0;   
+        padding: 0;
+       }
+
+       header li {
+        text-align: center;
+        padding: 1rem;
+        border-top: solid 1px #007ea4;
+       }
+
+       header nav ul li a {
+           display: flex;
+        justify-content: flex-start;
+       }
+
+       header nav ul li a i {
+        flex: 0 1 auto;
+        margin: 0 1rem 0 0;
+        text-align: center;
+       }
+
+        nav p {
+            line-height: 1.2;
+            font-size: 1.25rem;
+            flex: 0 1 auto;
+        }
+
+
+
+}
+
 
