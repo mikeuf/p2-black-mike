@@ -122,56 +122,51 @@ window.addEventListener('load', (event) => {
 
 
 
-/*
-addEventListener('click', (event) => {
-    console.log(document.getElementsByClassName('.active'));
-    document.querySelector('.active').classList.toggle('active');
-    console.log(this);
-    this.classList.toggle('active');
-})
-*/
 
 
 
 
-let buttonsAccordion = document.querySelectorAll('#accordion-about button');
-let articlesAccordion = document.querySelectorAll('#accordion-about article');
+let buttonsAccordion = document.querySelectorAll('.accordion-header');
+//let articlesAccordion = document.querySelectorAll('#accordion-about article');
 
 console.log(buttonsAccordion);
 
-console.log(articlesAccordion);
+//console.log(articlesAccordion);
 
 // apply the event listener to all of the headers
 for (var i = 0, len = buttonsAccordion.length; i < len; ++i) {
-    buttonsAccordion[i].addEventListener('click', expandPanel);
     console.log(buttonsAccordion[i]);
+    buttonsAccordion[i].addEventListener('click', expandAccordion);
 }
 
-function expandPanel() {
+function expandAccordion () {
+
 console.log('made it');
 
   // if the current panel was open, and was clicked again, just let it close without opening anything else
-  if (! this.nextElementSibling.classList.contains('expanded')) {
+  
+  // if the current panel was open, and was clicked again, just let it close without opening anything else
+  if (!this.nextElementSibling.classList.contains('expanded')) {
 
-  // if the current panel is closed, open it
-  console.log(this.nextElementSibling);
-  this.nextElementSibling.classList.add('expanded');
+    // if the current panel is closed, open it and set a '-'
+    this.nextElementSibling.classList.add('expanded');
+       } else {
+    this.nextElementSibling.classList.remove('expanded');
+      }
+  
 
-  // make text visible
-  let articleText = this.nextElementSibling.children;
-  for (var i = 0, len = articleText.length; i < len; ++i) {
-    articleText[i].classList.add('visible');
-  } 
 
-  } else {
-      
-  this.nextElementSibling.classList.remove('expanded');
-  let articleText = this.nextElementSibling.children;
-  for (var i = 0, len = articleText.length; i < len; ++i) {
-    articleText[i].classList.remove('visible');
-  }  
-}
-}
+    }
+
+    // apply the event listener to all of the headers
+for (var i = 0, len = buttonsAccordion.length; i < len; ++i) {
+    console.log('adding event listener');
+    buttonsAccordion[i].addEventListener('click', expandAccordion);
+  }
+
+
+
+
 
 
 

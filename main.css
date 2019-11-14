@@ -281,15 +281,17 @@ nav p {
 }
 
 #accordion-about {
-    background-color: rgba(0,0,0,0.5);
+
+    width: 100%;
     margin: 1rem 0 0 0;
+    height: 80%;
+    overflow: scroll;
 }
 
 
-#accordion-about button {
+.accordion-header {
     background-color: #007ea4;
     padding: 1rem 2rem 0.75rem 2rem;
-    width: 100%;
     border: solid 1px #00aaaa;
     border-top: none;
     font-size: 1.25rem;
@@ -299,10 +301,7 @@ nav p {
     text-align: left;
 }
 
-#accordion-about article {
 
-    height: 0;
-}
 
 #main-container-about h1,
 #main-container-about h2,
@@ -316,17 +315,23 @@ nav p {
     text-shadow: 0 0 10rem #000000;
 }
 
-#accordion-about article p {
-    font-size: 1.25rem;
+.accordion-content {
+    background-color: rgba(0,0,0,0.5);
+    overflow: hidden;
     opacity: 0;
+    height: 0;
+    transition: all 0.25s ease;
+}
+
+.accordion-content p {
+    font-size: 1.25rem; 
 }
 
 .expanded {
-    height: 20rem;
-    padding: 2rem 2rem 5rem 5rem;
+    opacity: 1 !important;
+      height: 8rem !important;
+    padding: 2rem 5rem !important;
+    transition: height 0.25s ease;
 }
 
-.visible {
-    opacity: 1 !important;
-}
 
