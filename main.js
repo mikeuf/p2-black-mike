@@ -2,6 +2,7 @@
 
 window.addEventListener('load', (event) => {
 
+    // Dynamically add header to each page to avoid duplicate code
     headerTag = document.getElementsByTagName('header');
     headerTag[0].innerHTML = '<a class="logo" href="index.html"> <i class="fal fa-landmark"></i> <h1>Debary Public <br />Library Association</h1> </a> <div class="hamburger-menu"><i class="fal fa-bars"></i></div> <nav> <ul> <li><a href="about.html"><i class="fal fa-book-user"></i><p>About</p></a></li><li><a href="contact.html"><i class="fal fa-phone-rotary"></i><p>Contact</p></a></li></ul> </nav>';
 
@@ -9,6 +10,7 @@ window.addEventListener('load', (event) => {
     footerTag[0].innerHTML = '<p> &copy; 2019 Debary Public Library Association, Inc. All rights reserved. </p>';
 
 
+    // Get weather from Dark Sky API
     if (tabButtonAddress = document.getElementById('tab-button-weather')) {
         tabButtonAddress.addEventListener('click', getWeather);
     }
@@ -31,7 +33,7 @@ window.addEventListener('load', (event) => {
             if (this.readyState == 4 && this.status == 200) {
                 var apiResult = JSON.parse(this.responseText);
 
-                console.log(apiResult);
+
 
                 listWeather = document.createElement('ul');
                 listWeather.setAttribute('id', 'list-weather');
@@ -70,6 +72,7 @@ window.addEventListener('load', (event) => {
     }
 
 
+    // event listener for Contact menu buttons and tab view
     let tabButton = document.querySelectorAll('.tab-button');
 
     for (var i = 0, len = tabButton.length; i < len; ++i) {
@@ -112,31 +115,25 @@ window.addEventListener('load', (event) => {
 
 
 
-
+    // event listener for accordion menu in About page
 
     let buttonsAccordion = document.querySelectorAll('.accordion-header');
     //let articlesAccordion = document.querySelectorAll('#accordion-about article');
 
-    console.log(buttonsAccordion);
 
-    //console.log(articlesAccordion);
 
     // apply the event listener to all of the headers
     for (var i = 0, len = buttonsAccordion.length; i < len; ++i) {
-        console.log(buttonsAccordion[i]);
+
         buttonsAccordion[i].addEventListener('click', expandAccordion);
     }
 
     function expandAccordion() {
 
-        console.log('made it');
 
-        // if the current panel was open, and was clicked again, just let it close without opening anything else
 
-        // if the current panel was open, and was clicked again, just let it close without opening anything else
         if (!this.nextElementSibling.classList.contains('expanded')) {
 
-            // if the current panel is closed, open it and set a '-'
             this.nextElementSibling.classList.add('expanded');
         } else {
             this.nextElementSibling.classList.remove('expanded');
@@ -144,6 +141,7 @@ window.addEventListener('load', (event) => {
     }
 
 
+    // Toggle mobile menu
     function showMobileMenu() {
 
         let menuMobile = document.querySelector('header nav');
@@ -153,7 +151,7 @@ window.addEventListener('load', (event) => {
 
     // apply the event listener to all of the headers
     for (var i = 0, len = buttonsAccordion.length; i < len; ++i) {
-        console.log('adding event listener');
+
         buttonsAccordion[i].addEventListener('click', expandAccordion);
     }
 
